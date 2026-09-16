@@ -394,11 +394,9 @@ def make_comparison_chart(df, threshold):
                   annotation_text="THRESHOLD",
                   annotation_font=dict(size=10, color="#F59E0B", family="JetBrains Mono"),
                   annotation_position="top right")
-    fig.update_layout(
-        **PLOTLY_LAYOUT,
-        height=320,
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-    )
+    layout = {**PLOTLY_LAYOUT, "height": 320}
+    layout["legend"] = dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+    fig.update_layout(**layout)
     return fig
 
 
