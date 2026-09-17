@@ -243,11 +243,23 @@ def generate_client_events():
     move_a = np.random.randint(0, 2, days)
     temp_a = np.random.choice([0, 1], days, p=[0.85, 0.15])
 
-    vol_b = np.random.normal(50, 10, days) + np.arange(days) * 2.5
+    # User B: small baseline variance (days 1-15) so std isn't pinned at
+    # the zero floor, a clean gap (days 16-19, still old role, no
+    # anomalies), then a moderate elevated pattern starting exactly on
+    # day 20 — the day HR reports the role change. This is what makes the
+    # Context Resolver demo visible: the raw score crosses the alert
+    # threshold after day 20, and toggling HR integration pulls every one
+    # of those days back below it.
+    vol_b = np.random.normal(50, 10, days)
     move_b = np.zeros(days)
-    move_b[25:] = 3
-    temp_b = np.random.choice([0, 1], days, p=[0.8, 0.2])
-    temp_b[26:] = 1  # After-hours access spikes
+    move_b[:15] = np.random.choice([0, 1], 15, p=[0.9, 0.1])
+    move_b[19:] = np.random.choice([0, 1], days - 19, p=[0.3, 0.7])
+    temp_b = np.zeros(days)
+    temp_b[:15] = np.random.choice([0, 1], 15, p=[0.9, 0.1])
+    temp_b[19:] = np.random.choice([0, 1], days - 19, p=[0.4, 0.6])
+
+    role_change_idx = 19  # day 20 (0-indexed) — matches ContextResolver.hr_context
+    vol_b[role_change_idx:] += 10  # modest volume bump from new role's data access
 
     base_date = datetime(2026, 8, 1)
     for d in range(days):
