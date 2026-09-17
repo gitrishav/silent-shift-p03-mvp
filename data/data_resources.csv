@@ -1,0 +1,9 @@
+resource_id,filename,owning_department_id,sensitivity
+R1,engineering_source_repos.csv,D1,Confidential
+R2,infra_credentials.csv,D1,Restricted
+R3,financial_ledger.csv,D2,Confidential
+R4,payroll_records.csv,D2,Restricted
+R5,employee_pii.csv,D3,Restricted
+R6,customer_crm_data.csv,D4,Confidential
+R7,legal_contracts.csv,D5,Confidential
+R8,compliance_audit_logs.csv,D5,Internal

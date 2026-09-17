@@ -1,0 +1,20 @@
+role,resource_id,permission
+Senior Software Engineer,R1,write
+Senior Software Engineer,R2,read
+DevOps Engineer,R1,read
+DevOps Engineer,R2,write
+Accountant,R3,read
+Accountant,R4,read
+Finance Manager,R3,write
+Finance Manager,R4,write
+Finance Manager,R8,read
+HR Generalist,R5,read
+HR Business Partner - Engineering,R5,read
+HR Business Partner - Engineering,R1,read
+HR Manager,R5,write
+Sales Executive,R6,read
+Marketing Lead,R6,write
+Legal Counsel,R7,write
+Legal Counsel,R8,read
+Compliance Officer,R7,read
+Compliance Officer,R8,write

@@ -1,0 +1,11 @@
+employee_id,name,department_id,role,hire_date
+E01,Priya Nair,D1,Senior Software Engineer,2022-03-14
+E02,Rahul Verma,D1,DevOps Engineer,2023-01-09
+E03,Ananya Iyer,D2,Accountant,2021-11-02
+E04,Vikram Shah,D2,Finance Manager,2019-06-18
+E05,Meera Pillai,D3,HR Generalist,2022-08-22
+E06,Arjun Menon,D3,HR Manager,2020-02-11
+E07,Kavya Reddy,D4,Sales Executive,2023-05-30
+E08,Rohan Kapoor,D4,Marketing Lead,2021-09-13
+E09,Sanjana Rao,D5,Legal Counsel,2020-10-05
+E10,Aditya Krishnan,D5,Compliance Officer,2022-01-17
